@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Document</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="../style/style.css" />
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script src="../js/webPro.js"></script>
+	<style>
+	  .items{
+	   font-style:italic;
+	   font-size:22px;
+	   color:green;
+	  }
+	  .subitems{
+	   font-style:italic;
+	   font-size:18px;
+	   color:red;
+	  }
+	  .content{
+	   font-style:normal;
+	   font-size:15px;
+	   color:black;
+	  }
+	</style>
+	<script type="text/javascript">
+	  function showTables()
+		{$("#tables").toggle("slow");
+	  }
+	  function showajaxcode(){
+		{$("#ajaxcode").toggle("slow");}
+	  }
+	  function showvalidation(){
+		{$("#validation").toggle("slow");}
+	  }
+	  function showtransaction(){
+		{$("#transaction").toggle("slow");}
+	  }
+	</script>
+</head>
+<body>
+    <div class="meta">
+		<div class="metalinks">
+			<a href="../index.php"><img src="../images/meta1.gif" alt="" width="15" height="14" /></a>
+			<img src="../images/meta2.gif" alt="" width="17" height="14" />
+			<img src="../images/meta3.gif" alt="" width="17" height="14" />
+			<img src="../images/meta4.gif" alt="" width="15" height="14" />
+		</div>		
+	</div>
+	<div id="header">
+		<a href="../index.php" class="logo"><img src="../images/logo.png" alt="setalpm" width="160" height="48" /></a>
+		<ul id="menu">
+			<li><a href="../index.php">Home</a></li>
+			<li><a href="../register.php">Register</a></li>
+			<li class="last"><a href="../docs/document.html">Document</a></li>
+		</ul>
+	</div>
+	<div style="margin:auto;">
+	  <h1 style="font-style:italic;color:red;text-align:center;">Xuguang Ren, S2813995, May 25, 2012</h1>
+	  <ol>
+	    <li class="items">Database Schema:
+		  <ul>
+		    <li class="subitems">Tables: <br>
+			<p class="content">There are four tables in the backup system: user, Application, Employer and Job. The user table contains three types of persons: regular user, manager and administrator. </p>
+			<li class="subitems" onclick="showTables()">Click To Show SQL Statements <br>
+			<div id="tables" style="display:none"><img src="user.jpg" width="600" height="400" alt=""/>
+			<img src="Application.jpg" width="600" height="400" alt=""/>
+			<img src="Employer.jpg" width="1000" height="400" alt=""/>
+			<img src="Job.jpg" width="600" height="400" alt=""/></div>
+			</li>
+		  </ul>
+		</li>
+		<li class="items">How To Use:<br/>
+		  <ul>
+		    <li class="subitems">Login Information: <br/>
+			  <p class="content">Account(A), Passowrd(P)   </p>
+			  <ul>
+			  <li class="content">Administrator: A: admin@qq.com P: 1 </li>
+			  <li class="content">Manager: A1: p@qq.com P1: 1. &nbsp; &nbsp; A2: manager1@qq.com P2: 1 </li>
+			  <li class="content">Regular User: A1: userA@qq.com P1: 1 &nbsp; &nbsp; A2: userB@qq.com P2: 1 &nbsp; &nbsp;A3: userC@qq.com P3: 1 </li>
+			  <li class="content">Only one index link has been given due that the home page is different for different type of users. "user A" and "user B" have applied the job "Senior Los manager" managered by manager "p@qq.com"</li>
+			  </ul>
+			</li>
+		    <li class="subitems">Unregistered User: <br/>
+			  <p class="content">A basic home page just for searching jobs will be shown by clicking <a href="http://dwarf.cit.griffith.edu.au/~s2813995/wp/assign2/index.php">http://dwarf.cit.griffith.edu.au/~s2813995/wp/assign2/index.php.</a> In the simpliest searching page, there are login or register interfaces for user to authenticate or register to be a new member. The searching function supports keywords, category, location and job type searching. In the "latest jobs" part, jobs which were posted in the nearest 5 days are listed directly. If click the "view more recent jobs", jobs posted in recent 10 days will be seen. In the "Brows Jobs By Category" user can easily brows all the jobs belong to that category. By clicking the "register", the register page will be seen. The required fields are labled "*". A user can upload his or her photo by choosing a file, but it is not mandatory. Every job title is a link leading to the corresponding job details. There is a "Apply this job" button in job detail page. Only login user can apply a job. </p>
+			</li>
+		    <li class="subitems">Regular Logged in User: <br/>
+			  <p class="content">Using a regular use account, two main functions are added inaddition to a unlogin user, which are "Update the Password" and apply a job. A the head of each page, a remainder is remainning who is using it at that time. And the user can logour at any time.</p>
+			</li>
+			<li class="subitems">Manager: <br/>
+			  <p class="content">In assignment1, every user can see the employer page. In this solution, only the manager can see the employer page. If login as a manager, the home page will be changed into the employer's page. The manager can see the posted job by that employer. The manager has the right to post a new job. And there is a "Global seach" button in the employer page, which can give the manager a job searcher's view. Each job title in the employer page is a link leading to the details of that job. The manager can delete or update the job.  In the job detail page, the manager can see the applicants who have applied this job.</p>
+			</li>
+			<li class="subitems">Administrator: <br/>
+			  <p class="content">Similar to the manager, only login using an administrator's account can the user see the adminstrator page. In the adminstrator page, a new manager can be asigned using his or hers email and the employer's name.</p>
+			</li>
+		  </ul>
+		</li>
+		<li class="items">Critical Techniques:
+		  <ul>
+		    <li class="subitems"> Ajax <br/>
+			   <p class="content">The login process and the update password process are implemented by using a pop-up dialog. The tiny form in the dialog is loaded by using jQuery. <span style="font-style:italic;">ajax()</span> fucntion sends the user authentication details to the server.<button class="button" onclick="showajaxcode()">Show Ajax Code</button></p> 
+			   <div id="ajaxcode" style="display:none;"><img src="ajaxcode.jpg" width="700" height="900" alt=""/></div>
+			</li>
+			<li class="subitems"> Validation <br/>
+			  <p class="content">The user's input has been validated on both server and client sides. At the client side, javascript has been used to implement validation. At the server side, validation are realized by using ajax with returning value from php "echo".<button class="button" onclick="showvalidation()">Show Validation Code</button></p>
+			   <div id="validation" style="display:none;"><img src="client_side.jpg" width="700" height="900" alt=""/><img src="server_side.jpg" width="700" height="900" alt=""/></div>
+			</li>
+			<li class="subitems">Transaction Processing<br/>
+			  <p class="content">Transaction has been implemented for multiple users concurrently accessing and updating the same database.<button class="button" onclick="showtransaction()">Show Transaction Code</button></p>
+			  <div id="transaction" style="display:none;"><img src="transaction1.jpg" width="400" height="400" alt=""/><img src="transaction2.jpg" width="400" height="400" alt=""/></div>
+			</li>
+			<li class="subitems">Foreignt key constraint<br/>
+			  <p class="content">Foreign key constraint has been included in the database design(can be seen in the sql statements). And the delete constraint are implemented by using cascading delete method. </p>
+			</li>
+		  </ul>
+		</li>
+		<li class="items">Userbility Test: <br/>
+		  <p class="content">I used DialogDesign usability test method to implement the userbility test. It consists of three phases: Interview, Solving test tasks, and Debriefing. Initially, there is only a keyword search in the searching page. But the user prefer to seach the job by some specific rules. Then the system adopted the job type, location and categoriy search. The users prefer borders with round corner. For all the borders of the web site are changed to round corner.</p>
+		</li>
+	  </ol>
+    </div>
+		
+    <div id="footer" style="color:red;">
+		Copyright &copy;. All rights reserved. Griffith Uni, Xuguang Ren, S2813995
+	</div>
+</body>
+</html>
